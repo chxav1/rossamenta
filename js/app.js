@@ -355,7 +355,7 @@
       prev.disabled = cur === 0;
       next.style.visibility = cur === panes.length - 1 ? 'hidden' : 'visible';
       $('span', next).textContent = cur === panes.length - 2 ? 'Último paso' : 'Siguiente';
-      const tb = tabs[cur].parentElement; tb.scrollTo({ left: tabs[cur].offsetLeft - tb.clientWidth / 2 + tabs[cur].clientWidth / 2, behavior: 'smooth' });
+      const tb = tabs[cur].parentElement; if (tb.scrollWidth > tb.clientWidth + 2) tb.scrollTo({ left: Math.max(0, tabs[cur].offsetLeft - tb.clientWidth / 2 + tabs[cur].clientWidth / 2), behavior: 'smooth' }); else tb.scrollLeft = 0;
     }
     tabs.forEach((t, k) => t.addEventListener('click', () => go(k)));
     prev.addEventListener('click', () => go(cur - 1));

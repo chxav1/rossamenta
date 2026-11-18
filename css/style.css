@@ -258,7 +258,7 @@ main{position:relative}
 .cfg-panel{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:34px;padding:clamp(16px,2.2vw,28px)}
 .tabs{display:flex;gap:4px;background:rgba(0,0,0,.22);padding:4px;border-radius:999px;margin-bottom:1.3rem;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:1;display:flex;align-items:center;justify-content:center;gap:.4em;padding:.7em .8em;border-radius:999px;font-weight:700;font-size:.86rem;color:var(--menta-2);white-space:nowrap;transition:background .3s,color .3s}
+.tab{flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:.4em;padding:.7em .7em;border-radius:999px;font-weight:700;font-size:.84rem;color:var(--menta-2);white-space:nowrap;transition:background .3s,color .3s}
 .tab b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.12);font-size:.7rem}
 .tab.is-on{background:var(--rosa);color:var(--bosque-3)}
 .tab.is-on b{background:var(--bosque);color:var(--nata)}
