@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rossamenta · Cakes & Cookies en Tarragona · Tartas personalizadas y galletas decoradas</title>
+<meta name="description" content="Rossamenta, Cakes & Cookies en Tarragona. Tartas personalizadas, drip cakes, tartas temáticas y galletas decoradas hechas con amor. Diseña tu tarta en 3D y pídela por WhatsApp.">
+<meta property="og:title" content="Rossamenta · Cakes & Cookies · Tarragona">
+<meta property="og:description" content="Creamos momentos inolvidables. Diseña tu tarta en 3D y pídela por WhatsApp.">
+<meta property="og:image" content="{{A}}/tarta-corazon-aniversario.jpg">
+<meta name="theme-color" content="#18574E">
+<link rel="icon" type="image/png" href="{{A}}/logo.png">
+<link rel="apple-touch-icon" href="{{A}}/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="image" href="{{A}}/logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Fraunces:ital,opsz,wght@1,9..144,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{C}}/css/style.css">
+<script>window.ASSET = '{{A}}';</script>
+</head>
+<body class="is-loading">
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="ld-spr"></div>
+  <div class="ld-center">
+    <div class="ld-badge">
+      <svg class="ld-ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94" class="ld-track"/><circle cx="100" cy="100" r="94" class="ld-prog" id="ldProg"/></svg>
+      <img src="{{A}}/logo.webp" alt="" width="160" height="160">
+    </div>
+    <div class="ld-num"><span id="ldNum">0</span></div>
+    <p class="ld-msg" id="ldMsg">Batiendo la nata</p>
+  </div>
+</div>
+
+<div id="cursor" aria-hidden="true"><span class="c-dot"></span><span class="c-ring"><em id="cLabel"></em></span></div>
+<div id="hoverImg" aria-hidden="true"><img alt=""></div>
+
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#inicio" aria-label="Rossamenta, inicio"><img src="{{A}}/logo.webp" alt="" width="46" height="46"><span>Rossamenta</span></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#galeria">Tartas</a>
+    <a href="#navidad">Galletas</a>
+    <a href="#taller">Diseña la tuya</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn btn-rosa mag nav-cta" href="https://wa.me/34643594123" target="_blank" rel="noopener"><span>Pedir por WhatsApp</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav>
+    <a href="#galeria"><span>Tartas</span></a>
+    <a href="#servicios"><span>Lo que hacemos</span></a>
+    <a href="#navidad"><span>Galletas</span></a>
+    <a href="#taller"><span>Diseña la tuya</span></a>
+    <a href="#contacto"><span>Contacto</span></a>
+  </nav>
+  <div class="menu-foot">
+    <a href="https://wa.me/34643594123" target="_blank" rel="noopener">WhatsApp · 643 594 123</a>
+    <a href="https://www.instagram.com/rossamentapm/" target="_blank" rel="noopener">@rossamentapm</a>
+  </div>
+</div>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <h1 class="hero-title" id="heroTitle" aria-label="Rossamenta">
+      <span class="ht-w" data-w="ROSSA">ROSSA</span><span class="ht-gap"></span><span class="ht-w" data-w="MENTA">MENTA</span>
+    </h1>
+    <div class="hero-ui">
+      <p class="hero-kicker reveal-up"><span class="dot"></span>Cakes &amp; Cookies · Tarragona</p>
+      <div class="hero-bottom">
+        <div class="hero-claim reveal-up">
+          <p class="serif">Hecho con amor, para ti</p>
+          <p class="claim">Creamos momentos <br>inolvidables.</p>
+        </div>
+        <div class="hero-ctas reveal-up">
+          <a class="btn btn-verde mag" href="#taller"><span>Diseña tu tarta</span></a>
+          <a class="btn btn-claro mag" href="https://wa.me/34643594123?text=%C2%A1Hola%20Rossamenta!%20Quiero%20hacer%20un%20pedido%20%F0%9F%8E%82" target="_blank" rel="noopener"><span>Pedir por WhatsApp</span></a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#story"><span class="cue-line"><i></i></span>Desliza y córtala</a>
+    </div>
+  </section>
+
+  <!-- STORY 3D -->
+  <section class="story" id="story" aria-label="Capa a capa">
+    <div class="story-sticky">
+      <div class="story-panel">
+        <p class="story-label serif">Capa a capa</p>
+        <div class="steps">
+          <article class="step"><span class="step-n">01</span><h2>Bizcocho</h2><p>Esponjoso y hecho a mano, del sabor que tú elijas: vainilla, chocolate, red velvet, limón o zanahoria.</p></article>
+          <article class="step"><span class="step-n">02</span><h2>Relleno</h2><p>Generoso de verdad. Nata y fresa, trufa, crema de queso, pistacho, dulce de leche o frutos rojos.</p></article>
+          <article class="step"><span class="step-n">03</span><h2>Cobertura</h2><p>Alisada a mano en el color de tu fiesta, con goteo brillante si te va lo dramático.</p></article>
+          <article class="step"><span class="step-n">04</span><h2>Final feliz</h2><p>Borde de nata con manga, fresas, corazones, perlas doradas y tu mensaje encima.</p></article>
+        </div>
+        <div class="story-progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-sec" aria-hidden="true">
+    <div class="mq" data-dir="-1"><div class="mq-track">Creamos momentos inolvidables <b></b> Hecho con amor, para ti <b></b> Cakes &amp; Cookies <b></b> Tarragona <b></b></div></div>
+    <div class="mq mq-2" data-dir="1"><div class="mq-track">Tartas personalizadas <b></b> Drip cakes <b></b> Galletas decoradas <b></b> Tartas temáticas <b></b></div></div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="galeria" id="galeria">
+    <div class="gal-pin">
+      <header class="gal-head">
+        <div>
+          <p class="kicker serif">Recién salidas del obrador</p>
+          <h2 class="split">Nuestras tartas</h2>
+        </div>
+        <p>Cada tarta se hace por encargo y a medida. Si te gusta una, pídela tal cual o cámbiale lo que quieras.</p>
+      </header>
+      <div class="gal-track" id="galTrack">
+        <article class="ph tilt" data-name="la tarta corazón de aniversario">
+          <div class="ph-img"><img src="{{A}}/tarta-corazon-aniversario.webp" alt="Tarta en forma de corazón blanca con borde de nata, corazones rojos y mensaje Feliz 1r aniversario" loading="lazy"></div>
+          <div class="ph-cap"><span class="tag">Aniversarios</span><h3>Corazón de nata</h3><button class="ph-cta" type="button">Quiero una así</button></div>
+        </article>
+        <article class="ph tilt" data-name="la tarta de corazones rojos">
+          <div class="ph-img"><img src="{{A}}/tarta-corazones-rojos.webp" alt="Tarta de buttercream con corazones rojos y topper Feliz Cumple" loading="lazy"></div>
+          <div class="ph-cap"><span class="tag">Cumpleaños</span><h3>Feliz cumple con corazones</h3><button class="ph-cta" type="button">Quiero una así</button></div>
+        </article>
+        <article class="ph tilt" data-name="la tarta de rosas de buttercream">
+          <div class="ph-img"><img src="{{A}}/tarta-rosas-milagros.webp" alt="Tarta con rosas rojas de buttercream, perlas doradas y topper Felicidades Milagros" loading="lazy"></div>
+          <div class="ph-cap"><span class="tag">Con nombre</span><h3>Rosas de buttercream</h3><button class="ph-cta" type="button">Quiero una así</button></div>
+        </article>
+        <article class="ph ph-tall tilt" data-name="la drip cake negra y oro">
+          <div class="ph-img"><img src="{{A}}/tarta-negra-oro.webp" alt="Drip cake negra con goteo dorado, chocolates y perlas doradas" loading="lazy"></div>
+          <div class="ph-cap"><span class="tag">Drip cakes</span><h3>Negro y oro</h3><button class="ph-cta" type="button">Quiero una así</button></div>
+        </article>
+        <article class="ph tilt" data-name="una tarta temática">
+          <div class="ph-img"><img src="{{A}}/tarta-onepiece.webp" alt="Tarta temática negra con borde verde, perlas doradas y mensaje Feliz cumple mi amor" loading="lazy"></div>
+          <div class="ph-cap"><span class="tag">Temáticas</span><h3>Tu serie favorita</h3><button class="ph-cta" type="button">Quiero una así</button></div>
+        </article>
+        <article class="ph tilt" data-name="las galletas decoradas de Navidad">
+          <div class="ph-img"><img src="{{A}}/galletas-reyes.webp" alt="Galletas decoradas de Papá Noel y Reyes Magos" loading="lazy"></div>
+          <div class="ph-cap"><span class="tag">Cookies</span><h3>Galletas decoradas</h3><button class="ph-cta" type="button">Quiero unas así</button></div>
+        </article>
+        <a class="ph ph-end" href="#taller">
+          <span class="serif">¿Tienes otra idea?</span>
+          <strong>Diseña la tuya en 3D</strong>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="sv-head">
+      <p class="kicker serif">Lo que hacemos</p>
+      <h2 class="split">Dulces a tu medida</h2>
+    </div>
+    <ul class="sv-list">
+      <li data-img="tarta-corazones-rojos.webp"><a href="#taller"><span class="sv-t">Tartas personalizadas</span><span class="sv-d">Cumpleaños, aniversarios y todo lo que quieras celebrar</span><img class="sv-thumb" src="{{A}}/tarta-corazones-rojos.webp" alt="" loading="lazy"></a></li>
+      <li data-img="tarta-onepiece.webp"><a href="#contacto" data-tipo="Una tarta temática"><span class="sv-t">Tartas temáticas</span><span class="sv-d">Tu serie, tu equipo, tu personaje o tu afición</span><img class="sv-thumb" src="{{A}}/tarta-onepiece.webp" alt="" loading="lazy"></a></li>
+      <li data-img="tarta-negra-oro.webp"><a href="#taller"><span class="sv-t">Drip cakes</span><span class="sv-d">Goteo brillante, chocolates y detalles dorados</span><img class="sv-thumb" src="{{A}}/tarta-negra-oro.webp" alt="" loading="lazy"></a></li>
+      <li data-img="galletas-navidad.webp"><a href="#navidad"><span class="sv-t">Galletas decoradas</span><span class="sv-d">Con nombre, logo o dibujo, una a una y a mano</span><img class="sv-thumb" src="{{A}}/galletas-navidad.webp" alt="" loading="lazy"></a></li>
+      <li data-img="tarta-corazon-aniversario.webp"><a href="#contacto" data-tipo="Un evento o mesa dulce"><span class="sv-t">Eventos y regalos</span><span class="sv-d">Packs de galletas, detalles para invitados y mesas dulces</span><img class="sv-thumb" src="{{A}}/tarta-corazon-aniversario.webp" alt="" loading="lazy"></a></li>
+    </ul>
+  </section>
+
+  <!-- NAVIDAD / VÍDEO -->
+  <section class="navidad" id="navidad">
+    <div class="nv-grid">
+      <div class="nv-text">
+        <p class="kicker serif">Temporada de Navidad</p>
+        <h2 class="split">Galletas que se regalan solas</h2>
+        <p>Papá Noel, Reyes Magos, pingüinos y bolas para el árbol. Horneadas y decoradas a mano en el obrador, empaquetadas una a una y listas para regalar.</p>
+        <p class="nv-note">Las fechas de Navidad vuelan: reserva las tuyas con tiempo.</p>
+        <a class="btn btn-rosa mag" href="https://wa.me/34643594123?text=%C2%A1Hola%20Rossamenta!%20Quiero%20reservar%20galletas%20de%20Navidad%20%F0%9F%8E%84%F0%9F%8D%AA" target="_blank" rel="noopener"><span>Reservar galletas de Navidad</span></a>
+      </div>
+      <div class="nv-media">
+        <div class="phone">
+          <video id="nvVideo" muted loop playsinline preload="none" poster="{{A}}/obrador-navidad.webp" data-src="{{A}}/navidad-galletas.mp4"></video>
+          <button class="snd" id="snd" type="button" aria-label="Activar sonido"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="x" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        </div>
+        <img class="nv-float f1" src="{{A}}/galletas-reyes.webp" alt="Galletas de Reyes Magos" loading="lazy">
+        <img class="nv-float f2" src="{{A}}/galleta-bola.webp" alt="Galleta en bola de Navidad" loading="lazy">
+        <img class="nv-float f3" src="{{A}}/galletas-navidad.webp" alt="Galletas de pingüino y Mamá Noel" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIGURADOR 3D -->
+  <section class="taller" id="taller">
+    <header class="taller-head">
+      <div>
+        <p class="kicker serif">Tu tarta, a tu manera</p>
+        <h2 class="split">Diseña tu tarta en 3D</h2>
+      </div>
+      <p>Gírala, cámbiala y ponle tu mensaje. Cuando te enamore, se la mandas a Rossamenta por WhatsApp y te responden con precio y fecha.</p>
+    </header>
+
+    <div class="cfg">
+      <div class="cfg-stage" id="cfgStage">
+        <canvas id="cfgCanvas" aria-label="Vista 3D de tu tarta. Arrastra para girarla." role="img"></canvas>
+        <div class="cfg-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arrastra para girarla</div>
+        <div class="cfg-meta">
+          <div class="cfg-serv"><strong id="servNum">12–15</strong><span>raciones aprox.</span></div>
+          <div class="cfg-cut"><div class="cut" id="cut"></div><span>Así es<br>por dentro</span></div>
+        </div>
+      </div>
+
+      <div class="cfg-panel">
+        <div class="tabs" role="tablist" aria-label="Pasos del diseño">
+          <button role="tab" class="tab is-on" aria-selected="true"><b>1</b>Forma</button>
+          <button role="tab" class="tab" aria-selected="false"><b>2</b>Sabor</button>
+          <button role="tab" class="tab" aria-selected="false"><b>3</b>Color</button>
+          <button role="tab" class="tab" aria-selected="false"><b>4</b>Decoración</button>
+          <button role="tab" class="tab" aria-selected="false"><b>5</b>Enviar</button>
+        </div>
+        <form id="cfgForm" onsubmit="return false">
+          <div class="pane is-on" role="tabpanel">
+            <h3>Forma</h3><div class="opts shapes" data-name="forma"></div>
+            <h3>Tamaño</h3><div class="opts" data-name="tam"></div>
+            <h3>Pisos</h3><div class="opts" data-name="pisos"></div>
+          </div>
+          <div class="pane" role="tabpanel">
+            <h3>Bizcocho</h3><div class="opts" data-name="bizcocho"></div>
+            <h3>Relleno</h3><div class="opts" data-name="relleno"></div>
+          </div>
+          <div class="pane" role="tabpanel">
+            <h3>Cobertura</h3><div class="opts swatches" data-name="cobertura"></div>
+            <h3>Goteo</h3><div class="opts swatches" data-name="drip"></div>
+          </div>
+          <div class="pane" role="tabpanel">
+            <h3>Decoración <small>elige todas las que quieras</small></h3><div class="opts" data-name="toppings" data-multi></div>
+            <h3>Mensaje encima</h3>
+            <div class="field"><input id="msg" maxlength="20" placeholder="Feliz cumple Laia" aria-label="Mensaje sobre la tarta"><span class="count" id="msgCount">0/20</span></div>
+          </div>
+          <div class="pane" role="tabpanel">
+            <h3>Tus datos</h3>
+            <div class="grid2">
+              <div class="field"><label for="nombre">Nombre</label><input id="nombre" autocomplete="name" placeholder="Tu nombre"></div>
+              <div class="field"><label for="fecha">¿Para cuándo?</label><input id="fecha" type="date"></div>
+              <div class="field"><label for="ocasion">Ocasión</label><select id="ocasion"><option>Cumpleaños</option><option>Aniversario</option><option>Bautizo o comunión</option><option>Boda</option><option>Empresa</option><option>Porque sí</option></select></div>
+              <div class="field"><label for="notas">Alergias o ideas extra</label><input id="notas" placeholder="Sin frutos secos, temática..."></div>
+            </div>
+            <div class="send">
+              <button type="button" class="btn btn-rosa mag" id="sendWa"><span>Enviar por WhatsApp</span></button>
+              <button type="button" class="btn btn-linea" id="snap"><span>Descargar foto 3D</span></button>
+            </div>
+            <p class="send-note">Se abre WhatsApp con tu pedido ya escrito. Si quieres, adjunta también la foto 3D.</p>
+          </div>
+          <div class="pane-nav">
+            <button type="button" class="btn-txt" id="prevTab">Anterior</button>
+            <button type="button" class="btn btn-rosa" id="nextTab"><span>Siguiente</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso" id="proceso">
+    <div class="pr-head">
+      <p class="kicker serif">Haz tu pedido hoy mismo</p>
+      <h2 class="split">Así de fácil</h2>
+    </div>
+    <ol class="proc">
+      <li><span>1</span><h3>Nos cuentas tu idea</h3><p>Diséñala aquí en 3D o mándanos una foto de referencia por WhatsApp.</p></li>
+      <li><span>2</span><h3>Te confirmamos</h3><p>Te respondemos con precio, fecha y alguna sugerencia para que quede perfecta.</p></li>
+      <li><span>3</span><h3>La recoges y a soplar</h3><p>Hecha con amor para tu día y lista para recoger en Tarragona.</p></li>
+    </ol>
+  </section>
+
+  <!-- FIESTA -->
+  <section class="fiesta" id="fiesta">
+    <canvas id="sprCanvas" aria-hidden="true"></canvas>
+    <div class="fiesta-inner">
+      <img class="fiesta-logo" src="{{A}}/logo.webp" alt="Logo de Rossamenta" width="120" height="120" loading="lazy">
+      <h2 class="split">¿Lo celebramos?</h2>
+      <p>Juega con los sprinkles mientras te decides.</p>
+      <div class="fiesta-ctas">
+        <a class="btn btn-verde mag" href="#taller"><span>Encargar mi tarta</span></a>
+        <button class="btn btn-claro mag" type="button" id="moreSpr"><span>Más sprinkles</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="ct-head">
+      <p class="kicker serif">Te esperamos</p>
+      <h2 class="split">Hablemos de dulces</h2>
+    </div>
+    <div class="ct-grid">
+      <div class="ct-info">
+        <a class="ct-card ct-wa" href="https://wa.me/34643594123" target="_blank" rel="noopener">
+          <span class="ct-ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z" fill="currentColor"/></svg></span>
+          <span><small>WhatsApp</small><strong>+34 643 594 123</strong></span>
+        </a>
+        <a class="ct-card" href="https://www.google.com/maps/search/?api=1&query=Carrer%20de%20Hern%C3%A1ndez%20Sanahuja%2019%2C%20Tarragona" target="_blank" rel="noopener">
+          <span class="ct-ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg></span>
+          <span><small>Dirección</small><strong>Carrer de Hernández Sanahuja, 19 · Tarragona</strong></span>
+        </a>
+        <a class="ct-card" href="https://www.instagram.com/rossamentapm/" target="_blank" rel="noopener">
+          <span class="ct-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></span>
+          <span><small>Instagram</small><strong>@rossamentapm</strong></span>
+        </a>
+
+        <form id="ctForm" class="ct-form" onsubmit="return false">
+          <p class="ct-form-t">O déjanos tu consulta</p>
+          <div class="grid2">
+            <div class="field"><label for="cNombre">Nombre</label><input id="cNombre" autocomplete="name"></div>
+            <div class="field"><label for="cTipo">Me interesa</label>
+              <select id="cTipo"><option>Una tarta</option><option>Una tarta temática</option><option>Galletas decoradas</option><option>Galletas de Navidad</option><option>Un evento o mesa dulce</option><option>Otra cosa</option></select></div>
+          </div>
+          <div class="field"><label for="cMsg">Mensaje</label><textarea id="cMsg" rows="3" placeholder="Cuéntanos qué tienes en mente y para qué fecha"></textarea></div>
+          <button class="btn btn-rosa mag" type="button" id="ctSend"><span>Enviar por WhatsApp</span></button>
+        </form>
+      </div>
+      <div class="ct-side">
+        <div class="ct-map">
+          <iframe title="Mapa: Rossamenta en Carrer de Hernández Sanahuja 19, Tarragona" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Carrer%20de%20Hern%C3%A1ndez%20Sanahuja%2019%2C%2043005%20Tarragona&z=16&output=embed"></iframe>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=Carrer%20de%20Hern%C3%A1ndez%20Sanahuja%2019%2C%20Tarragona" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+        <div class="faq">
+          <details><summary>¿Con cuánta antelación tengo que pedir?</summary><p>Cuanto antes, mejor: las fechas se llenan rápido, sobre todo en Navidad. Escríbenos y te decimos al momento si tu día está libre.</p></details>
+          <details><summary>¿Hacéis tartas para alergias o intolerancias?</summary><p>Cuéntanos qué necesitas en el pedido y te diremos qué opciones podemos ofrecerte con seguridad.</p></details>
+          <details><summary>¿Puedo mandar una foto de referencia?</summary><p>Claro. Envíanosla por WhatsApp junto a tu diseño 3D y la adaptamos a tu gusto.</p></details>
+          <details><summary>¿Cómo se recoge?</summary><p>Al confirmar el encargo te indicamos el día, la hora y la recogida en Tarragona.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <img class="foot-logo" src="{{A}}/logo.webp" alt="" width="110" height="110" loading="lazy">
+    <div class="foot-word" id="footWord" aria-hidden="true">ROSSAMENTA</div>
+    <div class="foot-row">
+      <span>Cakes &amp; Cookies · Carrer de Hernández Sanahuja, 19 · Tarragona</span>
+      <span class="foot-links"><a href="https://wa.me/34643594123" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/rossamentapm/" target="_blank" rel="noopener">Instagram</a></span>
+      <span>© <span id="year"></span> Rossamenta</span>
+    </div>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
+<script src="{{C}}/js/cake.js"></script>
+<script src="{{C}}/js/app.js"></script>
+</body>
+</html>
